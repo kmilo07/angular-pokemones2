@@ -9,7 +9,8 @@
   <h3>Mis resultados</h3>
 
 </div>
-<div clase="contener" *ngFor="let poke of pokemones.reverse()">
+<div class="espacioTarjetas">
+  <div clase="contener" *ngFor="let poke of pokemones.reverse()">
   <div class="card {{poke.types[0].type.name}}">
     <div class="row">
       <div class="col-sm-12 col-md-8 centrar contenido">
@@ -36,6 +37,8 @@
     </div>
   </div>
 </div>
+</div>
+
 <div class="paginas">
   <button class="btn btn-outline-secondary" (click)="getPokemonsAtras(direccionAnterior)">Atras</button>
   {{contador}}

@@ -31,6 +31,7 @@ export class PokemonComponent implements OnInit {
   }
 
   getPokemonsSiguientes(valor: string) {
+    this.primera=0;
     this.contador++;
     this.pokemones = [];
     this.pokemonService.buscarPokemonesDireccion(valor).subscribe(
@@ -44,6 +45,7 @@ export class PokemonComponent implements OnInit {
   }
 
   getPokemonsAtras(valor: string) {
+    this.primera=0;
     if (this.contador > 0) {
       this.contador--;
     }this.pokemones = [];
@@ -101,17 +103,6 @@ export class PokemonComponent implements OnInit {
             });
     })
   }
-
-  // getPoderes(res: any): any{
-  //   this.pokemonService.buscarPoderesPokemones(res)
-  //   .subscribe((respuesta: any)=>{
-  //       this.pokemonService.buscarPoderesPokemones(respuesta.moves[0].move.url)
-  //       .subscribe((respu: any) =>{
-  //         respuesta.moves[0].move.name = respu.names[5].name;
-  //       })this.pokemones = [];
-  //       return respuesta
-  //   })
-  // }
 
   getTipoPorBusqueda(res: any){
     this.pokemonService.buscarTipo(res.types[0].type.url)

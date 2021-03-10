@@ -9,12 +9,12 @@
   background: DarkGrey;
   border: 2px solid black;
 }
-.footer{
+.footer {
   float: left;
   width: 100%;
   margin-top: 10px;
   border-top: 2px solid black;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   height: 100px;
   color: #fff;
   background: #3c3c3c;
