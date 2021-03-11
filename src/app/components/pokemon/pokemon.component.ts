@@ -152,6 +152,7 @@ export class PokemonComponent implements OnInit {
   }
   buscarPokemon(valor: string) {
     this.contador = 1;
+    this.atras = false;
     if (valor.length > 0) {
       if(this.primera==0){
         this.pokemones = [];
