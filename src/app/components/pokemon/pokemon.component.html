@@ -20,7 +20,7 @@
         <div class="col-sm-12 col-md-3">
           <div class="card-body">
             <h5 class="card-title"><strong>{{poke.name | uppercase}}</strong></h5>
-            <h6><strong>Tipo:</strong> {{poke.types[0].type.name}} <span *ngIf="poke.types[1]?.type.name">,</span>
+            <h6><strong>Tipo:</strong> {{poke.types[0].type.name}}<span *ngIf="poke.types[1]?.type.name">,</span>
               {{poke.types[1]?.type.name}}</h6>
             <h6><strong>Movimientos:</strong></h6>
             <div class="primera">
