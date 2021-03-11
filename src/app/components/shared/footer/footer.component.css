@@ -9,13 +9,23 @@
   background: DarkGrey;
   border: 2px solid black;
 }
+
 .footer {
   float: left;
   width: 100%;
+  font-size: 16px;
   margin-top: 10px;
   border-top: 2px solid black;
   padding: 10px 10px 0 10px;
   height: 100px;
   color: #fff;
   background: #3c3c3c;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
 }
