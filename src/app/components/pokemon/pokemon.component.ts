@@ -22,6 +22,7 @@ export class PokemonComponent implements OnInit {
     this.getPokemons();
   }
   getPokemons() {
+    this.pokemones=[];
     this.pokemonService.buscarPokemones().subscribe(
       (res: any) => {
         this.direccionSiguiente = res.next;
@@ -135,7 +136,7 @@ export class PokemonComponent implements OnInit {
                     .subscribe((respuesta : any) =>{
                       res.moves[3].move.name = respuesta.names[5].name;
                   })
-                  }
+                }
           });
   }
   buscarPokemon(valor: string) {
@@ -153,7 +154,7 @@ export class PokemonComponent implements OnInit {
           // alert(`Pokemon ${valor} no encontrado`);
           Swal.fire({
             imageUrl: 'https://stackblitz.com/files/angular-brr3ur/github/kmilo07/angular-pokemon/master/src/AC7G9BAL6NI7RTTW_400x220.jpg',
-            title: '¿Quien es ese pokemon?',
+            title: '¿Quién es ese pokémon?',
             text: `El pokemon "${valor}" no se ha encontrado`
           })
         }
