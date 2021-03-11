@@ -8,7 +8,6 @@ import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 import { PokemonComponent } from "./components/pokemon/pokemon.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PokemonService } from "./services/pokemon.service";
-import Swal from "sweetalert2";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
