@@ -9,11 +9,12 @@ import Swal from 'sweetalert2'
   styleUrls: ["./pokemon.component.css"]
 })
 export class PokemonComponent implements OnInit {
-  public pokemon: any = {};
   public pokemones: any[] = [];
   public direccionAnterior: String = "";
   public direccionSiguiente: String = "";
   public contador = 1;
+  public siguiente = true;
+  public atras = false;
   primera = 0;
   entrada;
   
@@ -33,7 +34,13 @@ export class PokemonComponent implements OnInit {
 
   getPokemonsSiguientes(valor: string) {
     this.primera=0;
-    this.contador++;
+    this.atras = true;
+    if(this.contador < 111){
+      this.contador++;
+      if(this.contador == 111){
+        this.siguiente = false;
+      }
+    }
     this.pokemones = [];
     this.pokemonService.buscarPokemonesDireccion(valor).subscribe(
       (res: any) => {
@@ -47,10 +54,14 @@ export class PokemonComponent implements OnInit {
 
   getPokemonsAtras(valor: string) {
     this.primera=0;
-    if (this.contador > 0) {
+    this.siguiente = true;
+    if (this.contador > 1) {
       this.contador--;
-    }this.pokemones = [];
-
+      this.atras = true;
+      if(this.contador==1){
+        this.atras = false;
+      }
+    }
     this.pokemones = [];
     this.pokemonService.buscarPokemonesDireccion(valor).subscribe(
       (res: any) => {
@@ -140,6 +151,7 @@ export class PokemonComponent implements OnInit {
           });
   }
   buscarPokemon(valor: string) {
+    this.contador = 1;
     if (valor.length > 0) {
       if(this.primera==0){
         this.pokemones = [];

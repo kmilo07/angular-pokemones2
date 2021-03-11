@@ -40,7 +40,7 @@
 </div>
 
 <div class="paginas">
-  <button class="btn btn-outline-secondary" (click)="getPokemonsAtras(direccionAnterior)">Atras</button>
+  <button *ngIf="atras"class="btn btn-outline-secondary" (click)="getPokemonsAtras(direccionAnterior)">Atras</button>
   {{contador}}
-  <button class="btn btn-secondary"(click)="getPokemonsSiguientes(direccionSiguiente)">Siguiente</button>
+  <button *ngIf="siguiente" class="btn btn-secondary"(click)="getPokemonsSiguientes(direccionSiguiente)">Siguiente</button>
 </div>
